@@ -1,0 +1,109 @@
+body {
+  background: radial-gradient(circle at center, #1b1b1b 0%, #000 100%);
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  direction: rtl;
+}
+
+#love-text {
+  font-size: 80px;
+  color: #ff4c4c;
+  text-shadow: 0 0 20px #ff4c4c, 0 0 40px #ff4c4c;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c;
+  }
+  to {
+    text-shadow: 0 0 20px #ff9999, 0 0 40px #ff4c4c;
+  }
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+  margin-top: 30px;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  left: 25px;
+  top: 0;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* توسيط أفقي */
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #love-text {
+    font-size: 50px;
+  }
+
+  .heart {
+    width: 35px;
+    height: 35px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  #love-text {
+    font-size: 40px;
+  }
+
+  .heart {
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 30px;
+    height: 30px;
+  }
+}
